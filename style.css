@@ -1,0 +1,246 @@
+/* ********************* */
+/* Imports */
+/* ********************* */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+/* ********************* */
+/* CSS RESET */
+/* ********************* */
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+h2,
+p {
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+}
+
+/* ********************* */
+/* Custom Properties */
+/* ********************* */
+
+:root {
+
+    /* Color */
+    --clr-primary-soft-blue: 215 51% 70%;
+    --clr-primary-cyan: 178 100% 50%;
+
+
+    --clr-neutral-bg-main: 217 54% 11%;
+    --clr-neutral-bg-card: 216 50% 16%;
+    --clr-neutral-line: 215 32% 27%;
+    --clr-neutral-white: 0 0% 100%;
+
+    /* Typography */
+    --fs-200: .75rem;
+    --fs-300: .875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.50rem;
+
+
+    /* Font-Families */
+    --ff-sans-serif: "Outfit", sans-serif;
+
+}
+
+body {
+    position: relative;
+    background-color: hsl(var(--clr-neutral-bg-main));
+    color: hsla(var(--clr-neutral-white) / 50%);
+    font-family: var(--ff-sans-serif);
+    font-size: var(--fs-400);
+    font-weight: 200;
+    min-height: 100vh;
+    line-height: 1;
+    display: grid;
+    grid-template-columns: minmax(1rem, 5rem) 1fr minmax(1rem, 5rem);
+
+}
+
+main {
+    margin-block: 2rem;
+    grid-column: 2/3;
+}
+
+footer {
+    grid-column: 2/3;
+
+}
+
+article {
+    background-color: hsl(var(--clr-neutral-bg-card));
+    padding: 1rem;
+    min-width: 250px;
+    max-width: 350px;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+h2 {
+    color: hsl(var(--clr-neutral-white));
+    font-size: var(--fs-500);
+    font-weight: 700;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.author {
+    display: flex;
+    gap: 1rem;
+}
+
+img[alt="article-img"] {
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+}
+.img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .img-container::after {
+    content: '';
+    background: hsl(var(--clr-primary-cyan) / 0.5) url('/images/icon-view.svg') no-repeat center;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .img-container:hover::after {
+    opacity: 1;
+  }
+  
+img[alt="avatar"] {
+    width: 2em;
+    height: 2em;
+}
+
+.eth {
+    color: hsl(var(--clr-primary-cyan));
+    font-weight: 500;
+}
+
+.eth::before {
+    content: url('/images/icon-ethereum.svg');
+    margin-right: 10px;
+
+}
+
+.time {
+    color: var(--clr-primary-soft-blue);
+    font-weight: 500;
+}
+
+.time::before {
+    content: url('/images/icon-clock.svg');
+    margin-right: 10px;
+
+}
+
+.icon {
+    height: 10px;
+    width: 10px;
+}
+
+.author-name {
+    font-weight: 500;
+    color: hsl(var(--clr-neutral-white));
+}
+
+h2,
+.author-name {
+    transition: color 0.3s ease;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid hsl(var(--clr-neutral-line));
+    /* or any color */
+}
+
+/* ********************* */
+/*Utility Classes*/
+/* ********************* */
+
+.flow>*:not(:last-child) {
+    margin-bottom: var(--flow-gap, 1rem);
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-align-center {
+    display: flex;
+
+    align-items: center;
+}
+
+/* ********************* */
+/* Media Queries */
+/* ********************* */
+
+/* Tablet */
+@media (max-width: 768px) {
+    article {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body {
+        grid-template-columns: 1rem 1fr 1rem;
+    }
+
+    h2 {
+        font-size: var(--fs-400);
+    }
+
+    .price,
+    .author {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .eth::before,
+    .time::before {
+        margin-right: 0.5rem;
+    }
+
+    img[alt="avatar"] {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
