@@ -1,13 +1,9 @@
-Here's a complete `README.md` for your **NFT Preview Card Template**, designed to be professional and Fiverr-ready:
 
----
-
-````markdown
 # 🎴 NFT Preview Card Component
 
 A clean, responsive HTML & CSS NFT card template. Great for portfolios, frontend practice, or quick project starters.
 
-![NFT Card Preview](./images/preview.png)
+![NFT Card Preview](./images/desktop-design.jpg)
 
 ---
 
@@ -32,7 +28,7 @@ Coming Soon: Add a link here if you host it (e.g., GitHub Pages, Netlify)
 1. **Download or Clone the repo**
    ```bash
    git clone https://github.com/your-username/nft-preview-card.git
-````
+   ````
 
 2. **Open `index.html`** in your browser to view.
 
@@ -113,7 +109,7 @@ nft-preview-template/
 ## 👤 Author
 
 **Aaman Sayyed**
-Contact via Fiverr or GitHub
+
 
 ---
 
